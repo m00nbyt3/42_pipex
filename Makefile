@@ -6,7 +6,7 @@
 #    By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 12:26:21 by ycarro            #+#    #+#              #
-#    Updated: 2021/12/21 14:05:11 by ycarro           ###   ########.fr        #
+#    Updated: 2022/01/10 15:16:14 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ INCLUDE :=  -I $(HDIR)
 HEADERFILES := include/pipex.h
 
 SRCFILES := errors.c \
+			utils.c \
+			utils2.c \
+			paths.c \
 			main.c
 
 OBJFILES := $(SRCFILES:%.c=obj/%.o)
