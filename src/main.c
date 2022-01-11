@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:20:15 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/11 11:33:42 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/11 12:44:55 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 int	main(int argc, char **argv, char **envp)
 {
+	t_data	data;
 	int		ret;
-	char	*touse;
-	char	**cmd;
-	char	**fenv;
 
 	if (argc != 5)
 		exit(0);
-	chk_files(argv);
-	cmd = ft_split(argv[2], ' ');
-	if (access(*cmd, X_OK))
-	{
-		fenv = ft_split(envp[format_path(envp)] + 5, ':');
-		touse = srch_path(cmd[0], fenv);
-	}
-	else
-		touse = *cmd;
-	//pipex(open(argv[1], argv[4], ))
+	chk_args(argv, &data, envp);
+	//pipex();
 	ret = 0;
-	ret = execve(touse, cmd, envp);
+	ret = execve(data.path2, data.cmd2, envp);
 	/*free(touse);
 	free(cmd);*/
 	printf("\nStatus: %d\n", ret);
