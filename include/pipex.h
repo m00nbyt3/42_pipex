@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:21:21 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/11 12:38:56 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/11 13:54:25 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,18 @@ typedef struct s_data
 		
 }			t_data;
 
+typedef struct s_fd
+{
+	int	infile;
+	int	outfile;	
+}			t_fd;
+
 //Functions
 int		format_path(char **envp);
 char	*srch_path(char *cmd, char **fenv);
 char	*set_path(char *fenv, char *cmd);
+void	pipex(t_data *data);
+
 
 
 //Utils
