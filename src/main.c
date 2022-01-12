@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:20:15 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/12 12:35:47 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:40:11 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 int	main(int argc, char **argv, char **envp)
 {
 	t_data	data;
-	//int		ret;
 
 	if (argc != 5)
+	{
+		printf("Invalid argument number: 4 needed but used %d\n", (argc - 1));
 		exit(0);
+	}
 	chk_args(argv, &data, envp);
 	pipex(&data);
-	//pipex();
-	//ret = 0;
-	//ret = execve(data.path2, data.cmd2, envp);
-	/*free(touse);
-	free(cmd);*/
-	//printf("\nStatus: %d\n", ret);
+	free(data.cmd1);
+	free(data.cmd2);
+	free(data.path1);
+	free(data.path2);
+	free(data.fenv);
 }

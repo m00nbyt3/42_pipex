@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:21:21 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/12 12:34:32 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:36:58 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	chk_files(char *file1, char *file2);
 void	chk_cmds(t_data *data, char **envp);
 
 //Errors
-int		errout(char *reason, char *arg);
-void	childerr(int type);
+int		err_ret(char *reason, char *arg);
+void	err_log(int type);
 
 #endif

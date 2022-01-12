@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:41:29 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/11 12:39:59 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:37:43 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	chk_files(char *file1, char *file2)
 
 	err = 0;
 	if (access(file1, R_OK | X_OK))
-		err = errout("Invalid file:", file1);
+		err = err_ret("Invalid file:", file1);
 	if (access(file2, R_OK | X_OK))
-		err = errout("Invalid file:", file2);
+		err = err_ret("Invalid file:", file2);
 	if (err)
 		exit(0);
 }
@@ -46,8 +46,14 @@ void	chk_cmds(t_data *data, char **envp)
 		data->path1 = srch_path(*(data->cmd1), data->fenv);
 	else
 		data->path1 = *(data->cmd1);
+	if (!data->path1)
+		err_ret("Invalid command: ", *(data->cmd1));
 	if (access(*(data->cmd2), X_OK))
 		data->path2 = srch_path(*(data->cmd2), data->fenv);
 	else
 		data->path2 = *(data->cmd2);
+	if (!data->path2)
+		err_ret("Invalid command: ", *(data->cmd2));
+	if (!data->path1 || !data->path2)
+		exit(0);
 }
