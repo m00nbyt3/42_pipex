@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:21:21 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/11 13:54:25 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/12 12:34:32 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <string.h>
+# include <string.h>
+# include <fcntl.h>
 
 //Structs
 typedef struct s_data
@@ -43,8 +44,7 @@ int		format_path(char **envp);
 char	*srch_path(char *cmd, char **fenv);
 char	*set_path(char *fenv, char *cmd);
 void	pipex(t_data *data);
-
-
+void	child_pr(int infile, int outfile, t_data *data, int lap);
 
 //Utils
 size_t	ft_strlen(const char *s);
@@ -62,5 +62,6 @@ void	chk_cmds(t_data *data, char **envp);
 
 //Errors
 int		errout(char *reason, char *arg);
+void	childerr(int type);
 
 #endif

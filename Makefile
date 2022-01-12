@@ -6,7 +6,7 @@
 #    By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 12:26:21 by ycarro            #+#    #+#              #
-#    Updated: 2022/01/11 11:58:18 by ycarro           ###   ########.fr        #
+#    Updated: 2022/01/12 12:31:02 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCFILES := errors.c \
 			utils2.c \
 			paths.c \
 			assign.c \
+			pipex.c \
 			main.c
 
 OBJFILES := $(SRCFILES:%.c=obj/%.o)
