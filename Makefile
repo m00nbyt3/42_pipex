@@ -6,7 +6,7 @@
 #    By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/21 12:26:21 by ycarro            #+#    #+#              #
-#    Updated: 2022/01/12 12:31:02 by ycarro           ###   ########.fr        #
+#    Updated: 2022/01/13 15:48:52 by ycarro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ HEADERFILES := include/pipex.h
 SRCFILES := errors.c \
 			utils.c \
 			utils2.c \
+			free_matrix.c \
 			paths.c \
 			assign.c \
 			pipex.c \

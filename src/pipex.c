@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:28:15 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/13 13:01:36 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/13 13:55:32 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	pipex(t_data *data)
 	if (pipe(bypass))
 		err_log(2);
 	data->fd[0] = open(data->file1, O_RDONLY);
-	data->fd[1] = open(data->file2, O_RDWR, O_CREAT, O_TRUNC, 0666);
+	data->fd[1] = open(data->file2, O_RDWR | O_CREAT | O_TRUNC, 0644);
 	child1 = fork();
 	if (child1 == -1)
 		err_log(0);
