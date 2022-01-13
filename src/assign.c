@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:41:29 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/12 15:37:43 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/13 12:57:17 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	chk_args(char **argv, t_data *data, char **envp)
 
 void	chk_files(char *file1, char *file2)
 {
-	int err;
+	int	err;
 
 	err = 0;
 	if (access(file1, R_OK | X_OK))

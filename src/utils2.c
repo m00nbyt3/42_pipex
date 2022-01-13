@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:26:45 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/10 11:32:16 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/13 13:01:55 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**ft_split(char const *s, char c);
 size_t	wrd_count(char const *str, char c);
-size_t	wrd_size (char const *s, char c, size_t *i);
+size_t	wrd_size(char const *s, char c, size_t *i);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 char	**ft_split(char const *s, char c)
@@ -65,7 +65,7 @@ size_t	wrd_count(char const *str, char c)
 	return (i);
 }
 
-size_t	wrd_size (char const *s, char c, size_t *i)
+size_t	wrd_size(char const *s, char c, size_t *i)
 {
 	size_t	size;
 
