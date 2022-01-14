@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:21:21 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/13 15:04:08 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:58:38 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ size_t	wrd_count(char const *str, char c);
 size_t	wrd_size(char const *s, char c, size_t *i);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	chk_args(char **argv, t_data *data, char **envp);
-void	chk_files(char *file1);
-void	chk_cmds(t_data *data, char **envp);
+int		chk_files(char *file1);
+int		chk_cmds(t_data *data, char **envp);
 void	free_matrix(char **matrix);
 
 //Errors

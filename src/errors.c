@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:19:40 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/12 15:37:09 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/14 13:23:28 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int	err_ret(char *reason, char *arg)
 
 void	err_log(int type)
 {
-	printf("Error when ");
 	if (type == 0)
-		perror("doing fork: ");
+		perror("Error when doing fork: ");
 	else if (type == 1)
-		perror("duplicating fds: ");
+		perror("Error when duplicating fds: ");
 	else if (type == 2)
-		perror("doing pipe: ");
+		perror("Error when doing pipe: ");
 	exit(0);
 }

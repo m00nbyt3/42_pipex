@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:28:15 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/13 13:55:32 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:37:35 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ void	child_pr(int infile, int outfile, t_data *data, int lap)
 		close(infile + 1);
 		close(outfile -1);
 	}
-	if (dup2(infile, STDIN_FILENO) == -1)
+	if (dup2(infile, 0) == -1)
 		err_log(1);
-	if (dup2(outfile, STDOUT_FILENO) == -1)
+	if (dup2(outfile, 1) == -1)
 		err_log(1);
 	close(infile);
 	close(outfile);

@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:03:29 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/13 15:03:58 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:18:53 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	free_matrix(char **matrix);
 
 void	free_matrix(char **matrix)
 {
-	char **tmp;
+	char	**tmp;
 
 	tmp = matrix;
-	while(*tmp)
+	while (*tmp)
 	{
 		free(*tmp);
 		tmp++;
