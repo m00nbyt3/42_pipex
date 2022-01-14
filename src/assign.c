@@ -6,14 +6,14 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:41:29 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/14 16:58:21 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/14 17:40:25 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
 void	chk_args(char **argv, t_data *data, char **envp);
-int		chk_files(char *file1);
+int		chk_files(char *file1, char *file2);
 int		chk_cmds(t_data *data, char **envp);
 
 void	chk_args(char **argv, t_data *data, char **envp)
@@ -23,7 +23,7 @@ void	chk_args(char **argv, t_data *data, char **envp)
 	err = 0;
 	data->file1 = argv[1];
 	data->file2 = argv[4];
-	err += chk_files(data->file1);
+	err += chk_files(data->file1, data->file2);
 	data->cmd1 = ft_split(argv[2], ' ');
 	data->cmd2 = ft_split(argv[3], ' ');
 	err += chk_cmds(data, envp);
@@ -31,13 +31,16 @@ void	chk_args(char **argv, t_data *data, char **envp)
 		exit(1);
 }
 
-int	chk_files(char *file1)
+int	chk_files(char *file1, char *file2)
 {
 	int	err;
 
 	err = 0;
-	if (access(file1, R_OK | X_OK))
+	if (access(file1, R_OK))
 		err = err_ret("Invalid file:", file1);
+	if (!access(file2, F_OK))
+		if (access(file2, W_OK))
+			err = err_ret("Could not write on file:", file1);
 	if (err)
 		return (1);
 	else
