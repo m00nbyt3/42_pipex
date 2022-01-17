@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:41:29 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/14 17:40:25 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/17 10:14:38 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		chk_cmds(t_data *data, char **envp);
 
 void	chk_args(char **argv, t_data *data, char **envp)
 {
-	int err;
+	int	err;
 
 	err = 0;
 	data->file1 = argv[1];
