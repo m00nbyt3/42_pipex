@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 15:16:22 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/13 13:00:41 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/18 14:00:40 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	format_path(char **envp)
 		if (*(envp[i]) == 'P' && *(envp[i] + 1) == 'A' && *(envp[i] + 2) == 'T' \
 			&& *(envp[i] + 3) == 'H' && *(envp[i] + 4) == '=')
 			return (i);
+	err_log(3);
 	return (-1);
 }
 

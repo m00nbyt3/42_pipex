@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:19:40 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/18 12:21:52 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/18 14:05:53 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	err_log(int type)
 		perror("Error when duplicating fds: ");
 	else if (type == 2)
 		perror("Error when doing pipe: ");
+	else if (type == 3)
+		printf("Error, PATH variable not found\n");
 	exit(1);
 }
