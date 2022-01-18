@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:19:40 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/14 13:23:28 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/18 12:21:52 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	err_log(int type)
 		perror("Error when duplicating fds: ");
 	else if (type == 2)
 		perror("Error when doing pipe: ");
-	exit(0);
+	exit(1);
 }

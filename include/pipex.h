@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:21:21 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/14 17:37:23 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/18 13:36:38 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct s_data
 	char	*path1;
 	char	*path2;
 	char	**fenv;
-	int		fd[2];	
+	int		fd[2];
+	int		err[2];
 }			t_data;
 
 //Functions
@@ -51,7 +52,7 @@ size_t	wrd_count(char const *str, char c);
 size_t	wrd_size(char const *s, char c, size_t *i);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	chk_args(char **argv, t_data *data, char **envp);
-int		chk_files(char *file1, char *file2);
+int		chk_files(t_data *data);
 int		chk_cmds(t_data *data, char **envp);
 void	free_matrix(char **matrix);
 

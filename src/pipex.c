@@ -6,7 +6,7 @@
 /*   By: ycarro <ycarro@student.42.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 11:28:15 by ycarro            #+#    #+#             */
-/*   Updated: 2022/01/14 16:37:35 by ycarro           ###   ########.fr       */
+/*   Updated: 2022/01/18 13:40:24 by ycarro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,17 @@ void	child_pr(int infile, int outfile, t_data *data, int lap)
 		close(infile + 1);
 		close(outfile -1);
 	}
-	if (dup2(infile, 0) == -1)
-		err_log(1);
-	if (dup2(outfile, 1) == -1)
-		err_log(1);
+	if (!data->err[lap])
+	{
+		if (dup2(infile, 0) == -1)
+			err_log(1);
+		if (dup2(outfile, 1) == -1)
+			err_log(1);
+	}
 	close(infile);
 	close(outfile);
+	if (data->err[lap])
+		exit(0);
 	if (!lap)
 		execve(data->path1, data->cmd1, data->fenv);
 	else
